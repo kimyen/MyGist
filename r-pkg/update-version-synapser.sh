@@ -29,6 +29,8 @@ rm DESCRIPTION
 mv DESCRIPTION2.temp DESCRIPTION
 rm DESCRIPTION.temp
 
+cat man/synapser-package.Rd
+
 # replace man/synapser-package.Rd with $VERSION
 VERSION_LINE=`grep Version man/synapser-package.Rd`
 sed "s|$VERSION_LINE|Version: \tab $VERSION \cr|g" man/synapser-package.Rd > man/synapser-package.Rd.temp
@@ -40,6 +42,8 @@ sed "s|$DATE_LINE|Date: \tab $DATE \cr|g" man/synapser-package.Rd.temp > man/syn
 rm man/synapser-package.Rd
 mv man/synapser-package.Rd2.temp man/synapser-package.Rd
 rm man/synapser-package.Rd.temp
+
+cat man/synapser-package.Rd
 
 git add --all
 git commit -m "Version $VERSION is succesfully built on $DATE"
